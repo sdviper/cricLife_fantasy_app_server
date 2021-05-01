@@ -7,7 +7,8 @@ module.exports = (app) => {
     // Retrieve all topPlayers
     app.post('/topPlayers1', topPlayers.findAll);
 
-    app.post('/top', topPlayers.postMatch);
+    app.post('/post_prediction', topPlayers.postPredictions);
+    app.get('/get_predictions/:match_no&:game_name', topPlayers.getPredictions);
 
     // Retrieve a single topPlayers with topPlayersId
     app.get('/topPlayers/:topPlayersId', topPlayers.findOne);

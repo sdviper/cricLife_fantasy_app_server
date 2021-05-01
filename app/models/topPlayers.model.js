@@ -7,7 +7,7 @@ const reqString = {
 
 
 const PlayerPredictionSchema = mongoose.Schema({
-    player_name: reqString,
+    'player_name': reqString,
     total_points: String,
     predictionInnings1: {
         top_batsman: {
@@ -36,7 +36,10 @@ const PlayerPredictionSchema = mongoose.Schema({
 })
 
 const MainSchema = mongoose.Schema({
-    match_no: {type:String,unique: true },
+    match_no: {
+        type: String,
+        unique: true
+    },
     game_name: reqString,
     playersPredictions: [
         PlayerPredictionSchema
